@@ -14,7 +14,6 @@ public class WindowConvert extends JFrame{
 		setResizable(false);
 		setTitle("Conversor Alura");
 		setLocationRelativeTo(null);
-		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		colocarComponentes();		
@@ -38,7 +37,7 @@ public class WindowConvert extends JFrame{
 		JLabel messageHome = new JLabel("Conversor Alura");
 		messageHome.setBounds(100, 100, 350, 80);
 		messageHome.setHorizontalAlignment(SwingConstants.CENTER);
-		messageHome.setFont(new Font("Broadway",Font.PLAIN, 30));
+		messageHome.setFont(new Font("Consolas",Font.BOLD, 30));
 		panel.add(messageHome);
 	}
 	
@@ -105,7 +104,7 @@ public class WindowConvert extends JFrame{
 		converteMoney.setBounds(120, 200, 320, 80);
 		converteMoney.setBorder(null);
 		converteMoney.setBackground(new Color(238,224,33));
-		converteMoney.setFont(new Font("Broadway",Font.PLAIN, 20));
+		converteMoney.setFont(new Font("Consolas",Font.BOLD, 20));
 		converteMoney.setFocusable(false);
 		converteMoney.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(converteMoney);
@@ -152,7 +151,7 @@ public class WindowConvert extends JFrame{
 		converteTemperature.setBounds(120, 300, 320, 80);
 		converteTemperature.setBorder(null);
 		converteTemperature.setBackground(new Color(238,224,33));
-		converteTemperature.setFont(new Font("Broadway",Font.PLAIN, 20));
+		converteTemperature.setFont(new Font("Consolas",Font.BOLD, 20));
 		converteTemperature.setFocusable(false);
 		converteTemperature.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(converteTemperature);

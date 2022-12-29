@@ -9,7 +9,9 @@ import javax.swing.*;
 
 public class ConverterMoney extends WindowConvert{
 	private static final String String = null;
-	String [] typesOfCoins = { "De CO a US"};
+	String [] typesOfCoins = { "De Pesos a Dolares", "DE Pesos a Euros", "De Peso a Libras",
+			"De Pesos a Yen", "De Pesos a Won Coreano", "De Dolar a Pesos", "De Euros a Pesos",
+			"De Libras a Pesos", "De Yen a Pesos", "De Won Coreano a Pesos"};
 	private JLabel result;
 	private JTextField amountMoney;
 	public double valorRecibido;
@@ -49,27 +51,27 @@ public class ConverterMoney extends WindowConvert{
 		messageWindow.setBackground(new Color(255,255,255));
 		messageWindow.setBounds(0, 70, 600, 80);
 		messageWindow.setHorizontalAlignment(SwingConstants.CENTER);
-		messageWindow.setFont(new Font("Broadway",Font.PLAIN, 25));
+		messageWindow.setFont(new Font("Consolas",Font.BOLD, 30));
 		panel.add(messageWindow);
 		
 		JLabel messageList = new JLabel("Moneda a Convertir");
-		messageList.setBounds(50, 200, 250, 60);
+		messageList.setBounds(50, 220, 250, 50);
 		messageList.setHorizontalAlignment(SwingConstants.CENTER);
-		messageList.setFont(new Font("Broadway",Font.PLAIN, 18));
+		messageList.setFont(new Font("Consolas",Font.BOLD, 20));
 		panel.add(messageList);
 		
 		JLabel messageAmount = new JLabel("Cantidad a Convertir");
-		messageAmount.setBounds(300, 200, 250, 60);
+		messageAmount.setBounds(300, 220, 250, 50);
 		messageAmount.setHorizontalAlignment(SwingConstants.CENTER);
-		messageAmount.setFont(new Font("Broadway",Font.PLAIN, 18));
+		messageAmount.setFont(new Font("Consolas",Font.BOLD, 20));
 		panel.add(messageAmount);
 	}
 	
 	public void comboBox() {
 		listOfCoins = new JComboBox(typesOfCoins);
-        listOfCoins.setBounds(75, 275, 200, 50); 
+        listOfCoins.setBounds(75, 260, 200, 50); 
         listOfCoins.setBorder(null);
-        listOfCoins.setFont(new Font("Broadway",Font.PLAIN, 17));
+        listOfCoins.setFont(new Font("Consolas",Font.BOLD, 17));
         listOfCoins.setBackground(new Color(255,255,255));
         listOfCoins.setSelectedItem("Seleccione");   //Orden del item    
         panel.add(listOfCoins);
@@ -79,18 +81,18 @@ public class ConverterMoney extends WindowConvert{
 	
     public void textField(){
         amountMoney = new JTextField();
-        amountMoney.setBounds(320, 275, 200, 50);
+        amountMoney.setBounds(320, 260, 200, 50);
         amountMoney.setBorder(null);
-        amountMoney.setFont(new Font("Broadway",Font.PLAIN, 18));
+        amountMoney.setFont(new Font("Consolas",Font.BOLD, 17));
         panel.add(amountMoney);
     }
 	
 	public void mainBottons() { 
 		JButton converteMoney = new JButton("Convertir");
-		converteMoney.setBounds(150, 350, 300, 50);
+		converteMoney.setBounds(150, 350, 300, 60);
 		converteMoney.setBorder(null);
 		converteMoney.setBackground(new Color(255,255,255));
-		converteMoney.setFont(new Font("Broadway",Font.PLAIN, 20));
+		converteMoney.setFont(new Font("Consolas",Font.BOLD, 20));
 		converteMoney.setFocusable(false);
 		converteMoney.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(converteMoney);
@@ -99,7 +101,7 @@ public class ConverterMoney extends WindowConvert{
 		result.setOpaque(true);
 		result.setBackground(new Color(255,255,255));
 		result.setHorizontalAlignment(SwingConstants.CENTER);
-		result.setFont(new Font("Broadway",Font.PLAIN, 15));
+		result.setFont(new Font("Consolas",Font.BOLD, 16));
 		panel.add(result);
 				
 		ActionListener buttonConverteMoney = new ActionListener() {
@@ -118,9 +120,15 @@ public class ConverterMoney extends WindowConvert{
 					result.setForeground(new Color(0,0,0));
 					result.setText("Tienes " + monedas.ConvertirMonedas(valorRecibido, options));
 				} else {
-					result.setForeground(new Color(226,13,13));
-					result.setText("El valor ingresado no es valido");
-				}
+					if (amountMoney.getText().length() == 0) {
+						result.setForeground(new Color(226,13,13));
+						result.setText("Ingrese un valora para convertir");
+					} else {
+						result.setForeground(new Color(226,13,13));
+						result.setText("El valor ingresado no es valido");
+					}
+				} 
+				
 				
 			}
 		};

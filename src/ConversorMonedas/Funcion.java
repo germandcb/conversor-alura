@@ -14,12 +14,36 @@ public class Funcion {
 		
 		*/ 
  		switch (opcion) {
-		case "De CO a US": {
-			return resultadoFinal = monedas.ConvertirPesosColombianosAEuro(ValorRecibido) + " US";
+		case "De Pesos a Dolares": {
+			return resultadoFinal = monedas.convertirPesosColombianosAEuro(ValorRecibido) + " US";
 		}
-		case "DE CO a EU": {
-			return resultadoFinal = monedas.ConvertirPesosColombianosAEuro(ValorRecibido) + "EU ";
-		} 
+		case "DE Pesos a Euros": {
+			return resultadoFinal = monedas.convertirPesosColombianosAEuro(ValorRecibido) + " EUR";
+		}
+		case "De Peso a Libras": {
+			return resultadoFinal = monedas.convertirPesosColombianosADolar(ValorRecibido) + " GBP";
+		}
+		case "De Pesos a Yen": {
+			return resultadoFinal = monedas.convertirPesosColombianosAYen(ValorRecibido) + " JPY";
+		}
+		case "De Pesos a Won Coreano": {
+			return resultadoFinal = monedas.convertirPesosColombianosAWonCoreano(ValorRecibido) + " KRW";
+		}
+		case "De Dolar a Pesos": {
+			return resultadoFinal = monedas.convertirDolarAPesoColombiano(ValorRecibido) + " COP";
+		}
+		case "De Euros a Pesos": {
+			return resultadoFinal = monedas.convertirEurosAPesosColombianos(ValorRecibido) + " COP";
+		}
+		case "De Libras a Pesos": { 
+			return resultadoFinal = monedas.convertirLibrasAPesosColombianos(ValorRecibido) + " COP";
+		}
+		case "De Yen a Pesos": {
+			return resultadoFinal = monedas.convertirYenAPesosColombianos(ValorRecibido) + " COP";
+		}
+		case "De Won Coreano a Pesos": {
+			return resultadoFinal = monedas.convertirWoncoreanoAPesoColombiano(ValorRecibido) + " COP";
+		}
 		}
 		return resultadoFinal;
 	}
